@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url(https://estaticos.elcolombiano.com/binrepository/780x853/0c144/780d565/none/11101/OKXI/a20220527t044908-m-10-95-12-10-h5-4201-3841-02-f_44489005_20240223194017.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .login-container, .register-container {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .form-title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="password"],
+    .form-container input[type="tel"],
+    .form-container input[type="date"],
+    .form-container select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .form-container input[type="submit"] {
+      width: 100%;
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .form-container input[type="submit"]:hover {
+      background-color: #0056b;
+    }
+
+    .form-container .error-message {
+      color: red;
+      margin-bottom: 10px;
+    }
+
+    .register-link {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .register-link a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .register-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-container">
+  <h2>Iniciar sesión</h2>
+  <form action="#" method="post" id="login-form">
+    <div class="error-message" id="error-message"></div>
+    <input type="text" name="username" placeholder="Nombre de usuario" required>
+    <input type="password" name="password" placeholder="Contraseña" required>
+    <input type="submit" value="Iniciar sesión">
+  </form>
+  <div class="register-link">
+    ¿No tienes una cuenta? <a href="#" id="show-register">Regístrate</a>
+  </div>
+</div>
+
+<div class="register-container" style="display: none;">
+  <h2 class="form-title">Registro</h2>
+  <form action="#" method="post" id="register-form" class="form-container">
+    <input type="text" name="nombre" placeholder="Nombre" required>
+    <input type="text" name="apellido" placeholder="Apellido" required>
+    <input type="tel" name="telefono" placeholder="Número de teléfono" required>
+    <input type="text" name="direccion" placeholder="Dirección" required>
+    <select name="genero">
+      <option value="masculino">Masculino</option>
+      <option value="femenino">Femenino</option>
+      <option value="otro">Otro</option>
+    </select>
+    <input type="date" name="fecha_nacimiento" required>
+    <input type="submit" value="Registrarse">
+  </form>
+  <div class="register-link">
+    ¿Ya tienes una cuenta? <a href="#" id="show-login">Inicia sesión</a>
+  </div>
+</div>
+
+<script>
+  document.getElementById('show-register').addEventListener('click', function() {
+    document.querySelector('.login-container').style.display = 'none';
+    document.querySelector('.register-container').style.display = 'block';
+  });
+
+  document.getElementById('show-login').addEventListener('click', function() {
+    document.querySelector('.register-container').style.display = 'none';
+    document.querySelector('.login-container').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
